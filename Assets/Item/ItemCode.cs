@@ -1,18 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ItemCode : MonoBehaviour
+public enum ItemCode
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    NoItem = 0,
+    IronOre = 1,
+    GoldOre = 2,
 }

@@ -24,9 +24,16 @@ public class JunkDameReceiver : DamageReceiver
     protected override void OnDead()
     {
         this.OnDeadFX();
+        this.OndDeadDrop();
         this.junkCtrl.JunkDespawn.DespawnObject();
+   
+    }
 
-        
+    protected virtual void OndDeadDrop()
+    {
+        Vector3 dropPos = transform.position;
+        Quaternion dropRot = transform.rotation;
+        ItemDropSpawner.Instance.Drop(this.junkCtrl.JunkSO.dropList, dropPos, dropRot);
     }
 
     public override void Reborn()
