@@ -33,7 +33,7 @@ public class JunkCtrl : SaiMonoBehaviour
     {
         if(this.junkDespawn != null) return;
         this.junkDespawn = transform.GetComponentInChildren<JunkDespawn>();
-        Debug.Log(transform.name + "LoadJunkDespawn", gameObject);
+        // Debug.Log(transform.name + "LoadJunkDespawn", gameObject);
     }
 
     protected virtual void LoadJunkSo()
@@ -41,6 +41,6 @@ public class JunkCtrl : SaiMonoBehaviour
         if(this.junkSO != null) return;
         string resPath = "Junk/" + transform.name;
         this.junkSO = Resources.Load<JunkSO>(resPath);
-        Debug.LogWarning(transform.name + ": LoadJunkSO" + resPath, gameObject);
+        // Debug.LogWarning(transform.name + ": LoadJunkSO" + resPath, gameObject);
     }
 }

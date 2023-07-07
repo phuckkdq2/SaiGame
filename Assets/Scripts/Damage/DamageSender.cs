@@ -10,7 +10,8 @@ public class DamageSender : SaiMonoBehaviour
     {
         DamageReceiver damageReceiver = obj.GetComponentInChildren<DamageReceiver>();    // gán component DamageReceiver từ thằng obj DamageReceiver con
         if(damageReceiver == null) return;                                               // kiểm tra xem damageReceiver component không 
-        this.Send(damageReceiver);                                                       // gọi hàm giảm máu của thằng 
+        this.Send(damageReceiver);   
+        this.createImpactFX();                                                    // gọi hàm giảm máu của thằng 
     }
 
     public virtual void Send(DamageReceiver damageReceiver)     // hàm giảm máu 
@@ -18,5 +19,18 @@ public class DamageSender : SaiMonoBehaviour
         damageReceiver.Deduct(this.damage);         // truyền và damage của DamageSender để hàm Deduct của class damageReceiver trừ máu
     }
 
-    
+    protected virtual void createImpactFX()
+    {
+        string fxName = this.GetImpactFX();
+
+        Vector3 hitPos = transform.position;
+        Quaternion hitRos = transform.rotation;
+        Transform fxImpact = FXSpawner.Instance.Spawn(fxName, hitPos, hitRos);
+        fxImpact.gameObject.SetActive(true);
+    }
+
+    public virtual string GetImpactFX()
+    {
+        return FXSpawner.impactOne;
+    }
 }

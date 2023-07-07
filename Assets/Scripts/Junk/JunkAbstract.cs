@@ -18,6 +18,6 @@ public abstract class JunkAbstract : SaiMonoBehaviour    // không cho thằng n
     {
         if(this.junkCtrl != null) return;
         this.junkCtrl = transform.parent.GetComponent<JunkCtrl>();
-        Debug.Log(transform.name + "LoadJunkCtrl", gameObject);
+        // Debug.Log(transform.name + "LoadJunkCtrl", gameObject);
     }
 }

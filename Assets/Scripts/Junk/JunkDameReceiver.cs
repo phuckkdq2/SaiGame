@@ -18,7 +18,7 @@ public class JunkDameReceiver : DamageReceiver
     {
         if(this.junkCtrl != null) return;
         this.junkCtrl = transform.parent.GetComponent<JunkCtrl>();          
-        Debug.Log(transform.name + ": Load Junk Ctrl", gameObject);
+        // Debug.Log(transform.name + ": Load Junk Ctrl", gameObject);
     }
 
     protected override void OnDead()
